@@ -51,8 +51,10 @@ public class Execution {
 	}
 	
 	@Test(alwaysRun = true)
-	public void isISOLoginSuccessfull() {
-
+	public void isISOLoginSuccessfull() throws IOException {
+		
+		System.out.println(AppUtility.GetSSOEmailID("SSOFacbookId"));
+		String ISOEmailid=AppUtility.emailGeneratorISO();
 		logger = report.startTest("Verify ISO login with valid user");
 		
 		boolean isSuccess = isoLoginFlow.isISOLoginSuccess(logger, "test1test1@gmail.com", "tribune01");
